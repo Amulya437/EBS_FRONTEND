@@ -1,0 +1,39 @@
+
+.landing-page .content .info h1 {
+    color:#5d5d5d;
+    font-size: 50px;
+  }
+  
+  .landing-page .content .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 25px;
+    color: #5d5d5d;
+  }
+  .landing-page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Findianexpress.com%2Farticle%2Fcities%2Fchandigarh%2Felectricity-charges-hiked-for-domestic-commercial-users-relief-for-industries-5115418%2F&psig=AOvVaw3cU-8p2bENcr9dBdYket2B&ust=1686140438328000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMDYh-HQrv8CFQAAAAAdAAAAABAL');
+    background-size: cover;
+    background-position: center;
+  }
+    
+   .landing-page ::before {
+    content: "Save Power";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color:white;
+    text-align: left;
+  }
+  .logo{
+ position: left;
+  
+  left: 0px;
+ size: 5px;
+  width: 50px; /* Adjust the width to your desired size */
+  }
+   

@@ -1,4 +1,4 @@
-.registration-page {
+/* .registration-page {
   max-width: 50vw;
   margin: 0 auto;
   padding: 70px;
@@ -71,4 +71,31 @@ label {
 .btn-primary:hover,
 .btn-secondary:hover {
   opacity: 0.8;
+} */
+
+
+#signup .container #signup-row #signup-column #signup-box {
+
+  margin-top: auto;
+
+  max-width: auto;
+
+  height: auto;
+
+  border: 1px solid #9C9C9C;
+
+  background-color: #EAEAEA;
+
+}
+
+#signup .container #signup-row #signup-column #signup-box #signup-form {
+
+  padding: 20px;
+
+}
+
+#signup .container #signup-row #signup-column #signup-box #signup-form #register-link {
+
+  margin-top: -85px;
+
 }

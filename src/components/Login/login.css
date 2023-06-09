@@ -94,266 +94,114 @@ label{
     border: 1px solid rgb(0, 115, 255);
     width: 320px;
 } */
-.add-product-container {
+.login-container {
 
-    max-width: 600px;
-  
-    margin: 0 auto;
-  
-    padding: 20px;
-  
-    background-color: #ffffff;
-  
-    border-radius: 10px;
-  
-    box-shadow: 0px 0px 5px 0px #00000040;
-  
-  }
-  
-  
-  
-  
-  h2 {
-  
-    text-align: center;
-  
-    margin-top: 0;
-  
-    font-size: 36px;
-  
-    font-weight: bold;
-  
-    color: #222222;
-  
-  }
-  
-  
-  
-  
-  form {
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    align-items: center;
-  
-  }
-  
-  
-  
-  
-  .form-group {
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    margin-bottom: 20px;
-  
-    width: 100%;
-  
-  }
-  
-  
-  
-  
-  label {
-  
-    font-size: 18px;
-  
-    font-weight: bold;
-  
-    margin-bottom: 10px;
-  
-    color: #222222;
-  
-  }
-  
-  
-  
-  
-  input,
-  
-  select {
-  
-    padding: 10px;
-  
-    border-radius: 5px;
-  
-    border: none;
-  
-    background-color: #f5f5f5;
-  
-    color: #555555;
-  
-    font-size: 16px;
-  
-    width: 100%;
-  
-    margin-bottom: 5px;
-  
-  }
-  
-  
-  
-  
-  select {
-  
-    cursor: pointer;
-  
-  }
-  
-  
-  
-  
-  button[type="submit"] {
-  
-    background-color: #0066cc;
-  
-    color: #ffffff;
-  
-    border: none;
-  
-    border-radius: 5px;
-  
-    padding: 10px 20px;
-  
-    font-size: 16px;
-  
-    cursor: pointer;
-  
-    margin-top: 10px;
-  
-  }
-  
-  
-  
-  
-  button[type="submit"]:hover {
-  
-    background-color: #0052a3;
-  
-  }
-  
-  #logoImg{
-  
-    background-color: whitesmoke;
-  
-  }
-  
-  
-  
-  
-  #add-form {
-  
-  height: 500px;
-  
-  padding: 0px;
-  
-  }
-  
-  
-  
-  
-  #add-form-section {
-  
-    height: 500px;
-  
-  }
-  
-  
-  
-  
-  .add-box-demo{
-  
-    display: flex;
-  
-    flex-direction: row;
-  
-  }
-  
-  
-  
-  
-  .add-box-demo-input{
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-  }
-  
-  
-  
-  
-  
-  .add-text{
-  
-    text-align: center;
-  
-  }
-  
-  
-  
-  
-  select{
-  
-    border: 1px solid black;
-  
-    border-radius: 20px;
-  
-    background: none;
-  
-    color: #232323;
-  
-  }
-  
-  
-  
-  
-  input::placeholder{
-  
-    color: black;
-  
-  }
-  
-  
-  
-  
-  .add-box-image{
-  
-    display: flex;
-  
-    flex-direction: column;
-  
-    justify-content: space-between;
-  
-    align-items: center;
-  
-  }
-  
-  
-  
-  
-  .add-box-image > h3{
-  
-    text-transform: uppercase;
-  
-    padding-bottom: 20px;
-  
-    font-weight: 600;
-  
-  }
-  
-  
-  
-  
-  .add-bx{
-  
-    height: 220px;
-  
-  }
-  #btnGroup{
-    padding-top: 7em;
-  }
+  width: 300px;
+
+  margin: auto;
+
+  padding: 20px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+}
+
+
+
+
+h2 {
+
+  text-align: center;
+
+}
+
+
+
+
+.input-group {
+
+  margin-bottom: 10px;
+
+}
+
+
+
+
+label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+}
+
+
+
+
+input[type='text'],
+
+input[type='password'],
+
+input[type='role'] {
+
+  width: 100%;
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+}
+
+
+
+
+button {
+
+  width: 100%;
+
+  padding: 10px;
+
+  background-color: #4CAF50;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+
+
+
+button:hover {
+
+  background-color: #45a049;
+
+}
+
+
+
+
+.register-link {
+
+  margin-top: 10px;
+
+  text-align: center;
+
+}
+
+
+.register-link a {
+
+  color: #007bff;
+
+  text-decoration: none;
+
+}
