@@ -103,7 +103,7 @@ function Login() {
 
                     </div>
                             <div id="btnGroup" >
-                    <button className='btn btn-success' type="submit">Login</button>
+                    <button className='btn btn-primary' type="submit">Login</button>
                     <button className='btn btn-danger'>Forgot Password</button>
                     <button className='btn btn-warning'>Back</button>
                     </div>
