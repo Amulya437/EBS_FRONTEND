@@ -44,7 +44,7 @@ function Login() {
         console.log("Hello")
         try {
             console.log("Hii")
-            const res = await axios.post("http://localhost:2024/admin/login", {
+            const res = await axios.post("http://localhost:9090/api/user/login", {
                 email: email.current.value,
                 password: password.current.value
             })
@@ -104,7 +104,7 @@ function Login() {
 
                     </div>
                             <div id="btnGroup" >
-                    <button className='btn btn-success' type="submit">Login</button>
+                    <button className='btn btn-primary' type="submit">Login</button>
                     <button className='btn btn-danger'>Forgot Password</button>
                     <button className='btn btn-warning'>Back</button>
                     </div>
