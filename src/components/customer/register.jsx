@@ -1,4 +1,4 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 // import axios from 'axios';
 import './register.css'; // Import the CSS file for styling
 
@@ -100,7 +100,7 @@ import './register.css'; // Import the CSS file for styling
 //             onChange={handleChange}
 //             className="form-control"
 //           />
-         
+
 //         </div>
 //         <div className="form-group">
 //           <label>Contact:</label>
@@ -138,94 +138,94 @@ import './register.css'; // Import the CSS file for styling
 import { Component } from "react";
 
 
-export default class SignUp extends Component{
+export default class SignUp extends Component {
 
-  render(){
+    render() {
 
-      return (
+        return (
 
-          <div id="signup">
+            <div id="signup">
 
-              <h3 className="text-center text-white pt-5">Sign Up Form</h3>
+                <h3 className="text-center text-white pt-5">Sign Up Form</h3>
 
-              <div className="container">
+                <div className="container">
 
-                  <div id="signup-row" className="row justify-content-center align-items-center">
+                    <div id="signup-row" className="row justify-content-center align-items-center">
 
-                      <div id="signup-column" className="col-md-6">
+                        <div id="signup-column" className="col-md-6">
 
-                          <div id="signup-box" className="col-md-12">
+                            <div id="signup-box" className="col-md-12">
 
-                              <form id="signup-form" className="form" action="" method="post">
+                                <form id="signup-form" className="form" action="" method="post">
 
-                                  <h3 className="text-center text-info">Sign Up</h3>
+                                    <h3 className="text-center text-info">Sign Up</h3>
 
-                                  <div className="form-group">
+                                    <div className="form-group">
 
-                                      <label htmlFor="name" className="text-info">Name:</label><br />
+                                        <label htmlFor="name" className="text-info">Name:</label><br />
 
-                                      <input type="text" name="name" id="name" className="form-control" />
+                                        <input type="text" name="name" id="name" className="form-control" />
 
-                                  </div>
+                                    </div>
 
-                                  <div className="form-group">
+                                    <div className="form-group">
 
-                                      <label htmlFor="username" className="text-info">Email:</label><br />
+                                        <label htmlFor="username" className="text-info">Email:</label><br />
 
-                                      <input type="text" name="username" id="username" className="form-control" />
+                                        <input type="text" name="username" id="username" className="form-control" />
 
-                                  </div>
-
-                                  
-
-                                  <div className="form-group">
-
-                                      <label htmlFor="password" className="text-info">Password:</label><br />
-
-                                      <input type="text" name="password" id="password" className="form-control" />
-
-                                  </div>
-                                  <div className="form-group">
-
-                                      <label htmlFor="role" className="text-info">Role:</label><br />
-
-                                      
-                                      <select
-          
-                               // value={formData.accountType}
-                                 // onChange={handleInputChange}
-                                  className="form-control"
-                                  >
-                          <option value="">Select an option</option>
-                          <option value="admin">Admin</option>
-                          <option value="customer">Customer</option>
-                          </select>
+                                    </div>
 
 
-                                  </div>
 
-                                  <div className="form-group">
+                                    <div className="form-group">
 
-                                      <br/>
+                                        <label htmlFor="password" className="text-info">Password:</label><br />
 
-                                      <input type="submit" name="submit" className="btn btn-info btn-md" value="Sign Up" />
+                                        <input type="text" name="password" id="password" className="form-control" />
 
-                                  </div>
+                                    </div>
+                                    <div className="form-group">
 
-                              </form>
+                                        <label htmlFor="role" className="text-info">Role:</label><br />
 
-                          </div>
 
-                      </div>
+                                        <select
 
-                  </div>
+                                            // value={formData.accountType}
+                                            // onChange={handleInputChange}
+                                            className="form-control"
+                                        >
+                                            <option value="">Select an option</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="customer">Customer</option>
+                                        </select>
 
-              </div>
 
-          </div>
+                                    </div>
 
-      )
+                                    <div className="form-group">
 
-  }
+                                        <br />
+
+                                        <input type="submit" name="submit" className="btn btn-info btn-md" value="Sign Up" />
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        )
+
+    }
 
 }

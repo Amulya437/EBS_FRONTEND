@@ -10,11 +10,16 @@ import Navbar from './components/navbar/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerDashboard from './components/customer/customerDashboard';
 import AdminDashboard from './components/admin/adminDashboard';
+import { Payment } from './components/payment';
+import { PaymentHistory } from './components/paymentHistory';
+import { Bill } from './components/bill';
+import { BillHistory } from './components/billHistory';
+
  
 function App() {
   return (
     <div className="App">
-     
+      
       <Navbar/>
          <Routes>
          <Route path='/' element = {<Home/>}/>
@@ -24,8 +29,12 @@ function App() {
           <Route path='/contactus' element = {<ContactUs/>}/>
           <Route path='/CustomerDashboard' element = {<CustomerDashboard/>}/>
           <Route path='/AdminDashboard' element = {<AdminDashboard/>}/>
+          <Route path='/managePayment' element = {<Payment/>}/>
+          <Route path='/paymentHistory' element = {<PaymentHistory/>}/>
+          <Route path='/manageBills' element = {<Bill/>}/>
+          <Route path='/billHistory' element = {<BillHistory/>}/>
         </Routes> 
-       
+        
 
     
 
