@@ -16,7 +16,6 @@ function App() {
     <div className="App">
      
       <Navbar/>
-      
          <Routes>
          <Route path='/' element = {<Home/>}/>
           <Route path='/login' element = {<Login/>}/>
@@ -25,7 +24,6 @@ function App() {
           <Route path='/contactus' element = {<ContactUs/>}/>
           <Route path='/CustomerDashboard' element = {<CustomerDashboard/>}/>
           <Route path='/AdminDashboard' element = {<AdminDashboard/>}/>
-          
         </Routes> 
        
 
