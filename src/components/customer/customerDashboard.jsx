@@ -32,6 +32,14 @@ const CustomerDashboard = () => {
                     </div>
                 </Link>
             </div >
+            {/* <div>
+                <Link to="/meter" className='link'>
+                    <div className="card" id="manage-meter">
+                        <img src="https://media.istockphoto.com/id/1311503439/vector/male-and-female-characters-are-paying-utilities-together.jpg?s=1024x1024&w=is&k=20&c=8DbqZWGjX5C6AFI_LRsz6FTtkJWE9rKZ7psKkBnAC5E=" alt="Meter" />
+                        <h3>Meter</h3>
+                    </div>
+                </Link>
+            </div > */}
             <div>
             <Link to="/changepassword" className='link'>
                 <div className="card" id="reports">

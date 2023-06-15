@@ -1,231 +1,153 @@
- import React, { useState } from 'react';
-// import axios from 'axios';
-import './register.css'; // Import the CSS file for styling
-
-// const Register = () => {
-//   const [formData, setFormData] = useState({
-//     accountType: '',
-//     name: '',
-//     address: '',
-//     email: '',
-//     contact: '',
-//     password: '',
-//   });
-//   const [errors, setErrors] = useState({});
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (validateForm()) {
-//       // Make Axios post request here
-//       axios
-//         .post('/api/register', formData)
-//         .then((response) => {
-//           console.log(response.data); // Handle success response
-//         })
-//         .catch((error) => {
-//           console.error(error); // Handle error response
-//         });
-//     }
-//   };
-
-//   const validateForm = () => {
-//     let isValid = true;
-//     const newErrors = {};
-
-//     // Perform validations for each field
-//     if (formData.accountType === '') {
-//       newErrors.accountType = 'Please select an account type';
-//       isValid = false;
-//     }
-//     if (formData.name.trim() === '') {
-//       newErrors.name = 'Please enter your name';
-//       isValid = false;
-//     }
-//     // Add more validations for other fields
-
-//     setErrors(newErrors);
-//     return isValid;
-//   };
-
-//   return (
-//     <div className="registration-page">
-//       <h1>Registration Page</h1>
-//       <form onSubmit={handleSubmit}>
-//         <div className="form-group">
-//           <label>Account Type:</label>
-//           <select
-//             name="accountType"
-//             value={formData.accountType}
-//             onChange={handleChange}
-//             className="form-control"
-//           >
-//             <option value="">Select an option</option>
-//             <option value="admin">Admin</option>
-//             <option value="customer">Customer</option>
-//           </select>
-//           {errors.accountType && <span className="error">{errors.accountType}</span>}
-//         </div>
-//         <div className="form-group">
-//           <label>Name:</label>
-//           <input
-//             type="text"
-//             name="name"
-//             value={formData.name}
-//             onChange={handleChange}
-//             className="form-control"
-//           />
-//           {errors.name && <span className="error">{errors.name}</span>}
-//         </div>
-//         <div className="form-group">
-//           <label>Address:</label>
-//           <input
-//             type="text"
-//             name="address"
-//             value={formData.address}
-//             onChange={handleChange}
-//             className="form-control"
-//           />
-//           {/* Add error handling for address field */}
-//         </div>
-//         <div className="form-group">
-//           <label>Email:</label>
-//           <input
-//             type="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             className="form-control"
-//           />
-         
-//         </div>
-//         <div className="form-group">
-//           <label>Contact:</label>
-//           <input
-//             type="text"
-//             name="contact"
-//             value={formData.contact}
-//             onChange={handleChange}
-//             className="form-control"
-//           />
-//           {/* Add error handling for contact field */}
-//         </div>
-//         <div className="form-group">
-//           <label>Password:</label>
-//           <input
-//             type="password"
-//             name="password"
-//             value={formData.password}
-//             onChange={handleChange}
-//             className="form-control"
-//           />
-//           {/* Add error handling for password field */}
-//         </div>
-//         <div className="button-group">
-//           <button type="submit" className="btn-primary">Create</button>
-//           <button type="button" className="btn-secondary">Back</button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Register;
-
-import { Component } from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
+import './register.css';
 
 
-export default class SignUp extends Component{
+const Register = () => {
+    const [formData, setFormData] = useState({
+      name: '',
+      contactNo: '',
+      email: '',
+      address: '',
+      password: '',
+    });
+    const [errors, setErrors] = useState({});
+  
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      // Validate the form
+      const validationErrors = validateForm();
+      if (Object.keys(validationErrors).length > 0) {
+        setErrors(validationErrors);
+        return;
+      }
+      console.log(formData)
+  
+      // Make the Axios request to send the data
+      try {
+        const response = await axios.post('http://localhost:9090/api/customer/register', formData);
+        console.log(response.data); // Handle the response as needed
+        // Clear the form after successful submission
+        setFormData({
+          name: '',
+          contactNo: '',
+          email: '',
+          address: '',
+          password: '',
+        });
+        setErrors({});
+        alert('Registered Successfully, now login')
+        window.location.replace('/login')
 
-  render(){
+      } catch (error) {
+        console.error(error);
+        // Handle error scenarios
+      }
+    };
+  
+    const validateForm = () => {
+      const errors = {};
+  
+      // Validate name
+      if (!formData.name) {
+        errors.name = 'Name is required';
+      }
+  
+      // Validate contact number
+      if (!formData.contactNo) {
+        errors.contactNo = 'Contact number is required';
+      }
+  
+      // Validate email
+      if (!formData.email) {
+        errors.email = 'Email is required';
+      } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+        errors.email = 'Invalid email format';
+      }
+  
+      // Validate address
+      if (!formData.address) {
+        errors.address = 'Address is required';
+      }
+  
+      if (!formData.password) {
+        errors.password = 'Password is required';
+      } else if (
+        !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(
+          formData.password
+        )
+      ) {
+        errors.password =
+          'Password must contain at least one uppercase letter, one lowercase letter, one special character, and be at least 8 characters long';
+      }
+  
+      return errors;
+    };
+  return (
+    <form className="register-form" onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        {errors.name && <span>{errors.name}</span>}
+      </div>
+      <div>
+        <label htmlFor="contactNo">Contact Number:</label>
+        <input
+          type="text"
+          id="contactNo"
+          name="contactNo"
+          value={formData.contactNo}
+          onChange={handleChange}
+        />
+        {errors.contactNo && <span>{errors.contactNo}</span>}
+      </div>
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        {errors.email && <span>{errors.email}</span>}
+      </div>
+      <div>
+        <label htmlFor="address">Address:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          value={formData.address}
+          onChange={handleChange}
+        />
+        {errors.address && <span>{errors.address}</span>}
+      </div>
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        {errors.password && <span>{errors.password}</span>}
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  );
+};
 
-      return (
-
-          <div id="signup">
-
-              <h3 className="text-center text-white pt-5">Sign Up Form</h3>
-
-              <div className="container">
-
-                  <div id="signup-row" className="row justify-content-center align-items-center">
-
-                      <div id="signup-column" className="col-md-6">
-
-                          <div id="signup-box" className="col-md-12">
-
-                              <form id="signup-form" className="form" action="" method="post">
-
-                                  <h3 className="text-center text-info">Sign Up</h3>
-
-                                  <div className="form-group">
-
-                                      <label htmlFor="name" className="text-info">Name:</label><br />
-
-                                      <input type="text" name="name" id="name" className="form-control" />
-
-                                  </div>
-
-                                  <div className="form-group">
-
-                                      <label htmlFor="username" className="text-info">Email:</label><br />
-
-                                      <input type="text" name="username" id="username" className="form-control" />
-
-                                  </div>
-
-                                  
-
-                                  <div className="form-group">
-
-                                      <label htmlFor="password" className="text-info">Password:</label><br />
-
-                                      <input type="text" name="password" id="password" className="form-control" />
-
-                                  </div>
-                                  <div className="form-group">
-
-                                      <label htmlFor="role" className="text-info">Role:</label><br />
-
-                                      
-                                      <select
-          
-                               // value={formData.accountType}
-                                 // onChange={handleInputChange}
-                                  className="form-control"
-                                  >
-                          <option value="">Select an option</option>
-                          <option value="admin">Admin</option>
-                          <option value="customer">Customer</option>
-                          </select>
-
-
-                                  </div>
-
-                                  <div className="form-group">
-
-                                      <br/>
-
-                                      <input type="submit" name="submit" className="btn btn-info btn-md" value="Sign Up" />
-
-                                  </div>
-
-                              </form>
-
-                          </div>
-
-                      </div>
-
-                  </div>
-
-              </div>
-
-          </div>
-
-      )
-
-  }
-
-}
+export default Register;

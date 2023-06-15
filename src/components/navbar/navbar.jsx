@@ -20,16 +20,20 @@ const Navbar = () => {
 
             <li className="nav-item">
               <Link className="nav-item" aria-current="page" to="/aboutus" >
-                About Us
+              <button type="button" className="btn btn-primary">About Us</button>
               </Link></li>
+
+
             <li className="nav-item">
               <Link className="nav-item" aria-current="page" to="/contactus" >
-                Contact Us
+              <button type="button" className="btn btn-primary">Contact Us</button>
               </Link></li>
             <li className="nav-item">
               <Link className="nav-item" aria-current="page" to="/login" >
                 <button type="button" className="btn btn-primary">Login</button>
               </Link></li>
+
+
             <li className="nav-item">
               <Link className="nav-item" aria-current="page" to="/register" >
                 <button type="button" className="btn btn-primary">Register</button>

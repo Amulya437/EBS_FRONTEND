@@ -1,3 +1,185 @@
+
+
+
+import React, { Component } from 'react';
+import axios from 'axios'
+
+import '../Login/login.css';
+class Login extends Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+
+      username: '',
+
+      password: '',
+
+      role: ''
+
+    };
+
+  }
+
+
+
+
+  handleInputChange = event => {
+
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
+
+  }
+
+
+
+
+ 
+  
+  handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const { username, password, role } = this.state;
+    console.log(role)
+    if(role == 'customer'){
+    try {
+     console.log(password);
+        const res = await axios.post("http://localhost:9090/api/customer/login", {
+          
+            email: username,
+            password: password
+        })
+        
+        console.log(res.data)
+        window.location.replace('/customerdashboard')
+    } catch (err) {
+        alert('Invalid Credentials !')
+    }
+  }
+    else if(role == 'admin'){
+      console.log('in admin')
+        try {
+         console.log(password);
+            const res = await axios.post("http://localhost:9090/api/admin/login", {
+              
+                email: username,
+                password: password
+            })
+            
+            console.log(res.data)
+            window.location.replace('/admindashboard')
+        } catch (err) {
+            alert('Invalid Credentials !')
+  
+      }
+    }
+    else(
+      alert('Select role')
+    )
+}
+
+
+
+
+  render() {
+
+    const { username, password, role } = this.state;
+
+
+
+
+    return (
+
+      <div className="login-container">
+
+        <h2>Login</h2>
+
+        <form onSubmit={this.handleFormSubmit}>
+
+          <div className="input-group">
+
+            <label htmlFor="username">Username</label>
+
+            <input
+
+              type="text"
+
+              id="username"
+
+              name="username"
+
+              value={username}
+
+              onChange={this.handleInputChange}
+
+              required
+
+            />
+
+          </div>
+
+          <div className="input-group">
+
+            <label htmlFor="password">Password</label>
+
+            <input
+
+              type="password"
+
+              id="password"
+
+              name="password"
+
+              value={password}
+
+              onChange={this.handleInputChange}
+
+              required
+
+            />
+
+          </div>
+          <div className="input-group">
+          <label>Role</label>
+          <select
+            name="role"
+            value={role}
+            onChange={this.handleInputChange}
+            className="form-control"
+          >
+            <option value="">Select an option</option>
+            <option value="admin">Admin</option>
+            <option value="customer">Customer</option>
+          </select>
+
+
+          </div>
+          <button type="submit" onClick={this.login}>Login</button>
+
+        </form>
+
+        <div className="register-link">
+
+          Don't have an account? <a href="/register">Register</a>
+
+        </div>
+
+      </div>
+
+
+    );
+
+  }
+
+}
+
+
+
+
+export default Login;
+
 // import React, { useRef, useState } from 'react'
 
 // import './login.css'
@@ -187,159 +369,20 @@
 
 
 // export default Login;
+ // handleFormSubmit = event => {
 
+  //   event.preventDefault();
 
+  //   // Add your login logic here
 
-import React, { Component } from 'react';
+  //   const { username, password, role } = this.state;
 
-import '../Login/login.css';
-class Login extends Component {
+  //   // Process the form data
 
-  constructor(props) {
+  //   console.log('Username:', username);
 
-    super(props);
+  //   console.log('Password:', password);
 
-    this.state = {
+  //   console.log('Role:', role);
 
-      username: '',
-
-      password: '',
-
-      role: ''
-
-    };
-
-  }
-
-
-
-
-  handleInputChange = event => {
-
-    const { name, value } = event.target;
-
-    this.setState({ [name]: value });
-
-  }
-
-
-
-
-  handleFormSubmit = event => {
-
-    event.preventDefault();
-
-    // Add your login logic here
-
-    const { username, password, role } = this.state;
-
-    // Process the form data
-
-    console.log('Username:', username);
-
-    console.log('Password:', password);
-
-    console.log('Role:', role);
-
-  }
-
-
-
-
-  render() {
-
-    const { username, password, role } = this.state;
-
-
-
-
-    return (
-
-      <div className="login-container">
-
-        <h2>Login</h2>
-
-        <form onSubmit={this.handleFormSubmit}>
-
-          <div className="input-group">
-
-            <label htmlFor="username">Username</label>
-
-            <input
-
-              type="text"
-
-              id="username"
-
-              name="username"
-
-              value={username}
-
-              onChange={this.handleInputChange}
-
-              required
-
-            />
-
-          </div>
-
-          <div className="input-group">
-
-            <label htmlFor="password">Password</label>
-
-            <input
-
-              type="password"
-
-              id="password"
-
-              name="password"
-
-              value={password}
-
-              onChange={this.handleInputChange}
-
-              required
-
-            />
-
-          </div>
-          <div className="input-group">
-          <label>Role</label>
-          <select
-            name="accountType"
-            // value={formData.accountType}
-            // onChange={handleInputChange}
-            className="form-control"
-          >
-            <option value="">Select an option</option>
-            <option value="admin">Admin</option>
-            <option value="customer">Customer</option>
-          </select>
-
-
-          </div>
-          <button type="submit" onClick={this.login}>Login</button>
-
-        </form>
-
-        <div className="register-link">
-
-          Don't have an account? <a href="/register">Register</a>
-
-        </div>
-
-      </div>
-
-
-    );
-
-  }
-
-}
-
-
-
-
-export default Login;
-
+  // }
