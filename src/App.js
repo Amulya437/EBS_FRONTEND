@@ -14,6 +14,11 @@ import { Payment } from './components/payment';
 import { PaymentHistory } from './components/paymentHistory';
 import { Bill } from './components/bill';
 import { BillHistory } from './components/billHistory';
+import GetAllBill from './components/admin/getallbill';
+import GetAllCustomer from './components/admin/getallcustomer';
+import GetAllPayment from './components/admin/getallpayment';
+import Reports from './components/admin/reports';
+
 
 
 function App() {
@@ -35,6 +40,11 @@ function App() {
         
         <Route path='/manageBills' element={<Bill />} />
         <Route path='/billHistory' element={<BillHistory />} />
+        <Route path='/getallbill' element={<GetAllBill />} />
+        <Route path='/getallcustomer' element={<GetAllCustomer />} />
+        <Route path='/getallpayment' element={<GetAllPayment />} />
+        <Route path='/reports' element={<Reports />} />
+
       </Routes>
 
 

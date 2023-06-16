@@ -1,0 +1,34 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .object-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+  }
+  
+  .object-table th,
+  .object-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .object-table th {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-weight: bold;
+  }
+  
+  .object-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  

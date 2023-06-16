@@ -32,7 +32,7 @@ const AdminDashboard = () => {
                 </Link>
             </div >
             <div>
-                <Link to="/changepassword" className='link'>
+                <Link to="/reports" className='link'>
                     <div className="card" id="reports">
                         <img src="https://static.vecteezy.com/system/resources/thumbnails/004/579/241/small/compile-data-reports-with-smartphone-applications-free-vector.jpg" alt="Reports" />
                         <h3>Reports</h3>
