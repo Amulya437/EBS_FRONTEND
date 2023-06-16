@@ -42,6 +42,7 @@ const GetAllCustomer = () => {
               <td>{object.user.username}</td>
             </tr>
           ))}
+          
         </tbody>
       </table>
     </div>

@@ -11,6 +11,7 @@ const GetAllBill = () => {
 
   const fetchCustomers = async () => {
     try {
+      
       const response = await axios.get('http://localhost:9090/api/admin/getAllBill'); // Replace with your API endpoint
       setCustomers(response.data);
     } catch (error) {

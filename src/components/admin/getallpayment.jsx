@@ -44,6 +44,7 @@ const GetAllPayment = () => {
               
             </tr>
           ))}
+          
         </tbody>
       </table>
     </div>
